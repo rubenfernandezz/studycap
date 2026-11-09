@@ -69,7 +69,7 @@ Each browser session owns its library. Use the same browser profile and cookie t
 
 ## Engineering contributions
 
-Ruben Fernandez and Vas co-developed StudyCap. Ruben contributed to loading and bookmarking lectures on the dashboard, quiz and maths rendering in the viewer, and ranking related videos in Flask. Vas contributed to the MySQL lecture library, Google sign-in, Stripe subscription webhooks, document uploads and the server-side generation endpoint. Both worked on the Flask application and lecture viewer.
+Ruben Fernandez and Vasilis Pittalis co-developed StudyCap. Ruben contributed to loading and bookmarking lectures on the dashboard, quiz and maths rendering in the viewer, and ranking related videos in Flask. Vasilis contributed to the MySQL lecture library, Google sign-in, Stripe subscription webhooks, document uploads and the server-side generation endpoint. Both worked on the Flask application and lecture viewer.
 
 **CV summary:** Co-developed a lecture revision application with Flask and JavaScript, contributing to related-video ranking, saved-lecture workflows and interactive quizzes.
 

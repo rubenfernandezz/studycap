@@ -47,7 +47,7 @@ The synthetic practice page is the verified path. The extractor also recognises 
 
 ## Engineering contributions
 
-Ruben Fernandez and Vas co-developed the extension. Ruben contributed to popup loading and progress feedback, active-tab script injection and browser-local state. Vas contributed to caption extraction, summary formatting, the summary-start flow and daily-limit checks. Both worked on the popup and the content script.
+Ruben Fernandez and Vasilis Pittalis co-developed the extension. Ruben contributed to popup loading and progress feedback, active-tab script injection and browser-local state. Vasilis contributed to caption extraction, summary formatting, the summary-start flow and daily-limit checks. Both worked on the popup and the content script.
 
 **CV summary:** Co-developed a Chrome extension for lecture capture, contributing to popup progress feedback and the interaction between the popup and the active lecture tab.
 

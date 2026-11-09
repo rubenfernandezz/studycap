@@ -1,6 +1,6 @@
 # StudyCap
 
-StudyCap brings lecture captions, slide text and revision tools into one workflow. Ruben Fernandez and Vas co-developed a Chrome extension to capture lecture captions and a Flask application to organise study notes, answer questions and generate quizzes.
+StudyCap brings lecture captions, slide text and revision tools into one workflow. [Ruben Fernandez](https://github.com/rubenfernandezz) and [Vasilis Pittalis](https://github.com/VasmanARF) co-developed a Chrome extension to capture lecture captions and a Flask application to organise study notes, answer questions and generate quizzes.
 
 This repository includes a runnable local demonstration and screenshots of the original product. The default demo selects source excerpts, searches passages and creates recall exercises. An optional local model generates notes and multiple-choice questions.
 
@@ -65,7 +65,7 @@ The public edition uses Python, Flask, Jinja, SQLite and browser JavaScript with
 
 ## Collaboration and contributions
 
-Ruben contributed to dashboard lecture loading and bookmarks, viewer quizzes and maths rendering, related-video ranking in Flask, and extension popup progress feedback and active-tab script injection. Vas contributed to lecture persistence, Google sign-in, subscription webhooks, uploads, server-side generation, caption extraction and summary formatting. Both changed the application, viewer and extension. These statements follow the shared Git diffs. The local demo interface, SQLite storage and loopback handoff were prepared for this portfolio edition.
+Ruben contributed to dashboard lecture loading and bookmarks, viewer quizzes and maths rendering, related-video ranking in Flask, and extension popup progress feedback and active-tab script injection. Vasilis contributed to lecture persistence, Google sign-in, subscription webhooks, uploads, server-side generation, caption extraction and summary formatting. Both changed the application, viewer and extension. These statements follow the shared Git diffs. The local demo interface, SQLite storage and loopback handoff were prepared for this portfolio edition.
 
 ## Verification and limits
 
@@ -73,4 +73,8 @@ Run the web tests from `web-app/` with `.\.venv\Scripts\python.exe -B -m unittes
 
 The practice lecture, file imports and browser handoff use synthetic test material. Actual model inference and live Panopto layouts require separate validation. The local library stores plaintext data under `web-app/instance/`. Original-product screenshots show historical hosted features. The local setup and its available functions are detailed in the component guides.
 
-Ruben Fernandez and Vas share development credit. Publication permissions, branding approval and licensing remain under owner review.
+Ruben Fernandez and Vasilis Pittalis share development credit. The original production codebase, with credentials removed, is published at [VasmanARF/studycap](https://github.com/VasmanARF/studycap). Publication permissions and branding approval remain under owner review.
+
+## License
+
+[MIT](LICENSE)
