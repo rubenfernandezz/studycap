@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Lecture library · StudyCap{% endblock %}
+{% block body %}<h1>Lecture library</h1><p>Collect lecture captions and slide text, edit your study notes and test your recall.</p>
+<p><a class="button" href="/import">Add a lecture</a> <a href="/import?sample=1">Try synthetic captions</a></p>
+<h2>Saved lectures</h2><ul class="library">{% for item in lectures %}<li><a href="{{ url_for('viewer', lecture_id=item.id) }}">{{ item.title }}</a><small>{{ item.updated }} UTC</small></li>
+{% else %}<li>Your library is empty.</li>{% endfor %}</ul>{% endblock %}

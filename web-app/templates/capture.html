@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block title %}Review lecture · StudyCap{% endblock %}
+{% block body %}<h1>Review lecture</h1>
+<p id="handoff" role="status">Review the text before saving. You can also add a slide deck.</p>
+<form method="post" action="/import" enctype="multipart/form-data">
+<input type="hidden" name="csrf" value="{{ session.csrf }}">
+<label>Lecture title <input id="title" name="title" maxlength="200" required value="{{ title }}"></label>
+<label>Caption text <textarea id="captions" name="captions" rows="8" maxlength="60000">{{ captions }}</textarea></label>
+<label>Slides (optional PDF or PPTX, up to 8 MiB per request)<input type="file" accept=".pdf,.pptx" name="slides"></label>
+<p>{% if model %}The configured loopback model will receive the submitted text.{% else %}Offline excerpt mode selects the first eight distinct lines of each source. It makes no model call.{% endif %}</p>
+<button>Save study notes</button></form>{% endblock %}

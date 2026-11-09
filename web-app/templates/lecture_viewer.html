@@ -1,0 +1,17 @@
+{% extends 'base.html' %}{% block title %}{{ lecture.title }} · StudyCap{% endblock %}
+{% block body %}<h1>{{ lecture.title }}</h1>
+<section><h2>Study notes</h2><div id="study-notes" class="prose">{{ lecture.summary }}</div>{% if lecture.notes %}<h2>Personal notes</h2><div id="personal-notes" class="prose">{{ lecture.notes }}</div>{% endif %}</section>
+<details><summary>Edit title and notes</summary><form method="post" action="{{ url_for('edit', lecture_id=lecture.id) }}">
+<input type="hidden" name="csrf" value="{{ session.csrf }}"><label>Title<input name="title" maxlength="200" required value="{{ lecture.title }}"></label>
+<label>Study notes<textarea name="summary" maxlength="100000" rows="8" required>{{ lecture.summary }}</textarea></label>
+<label>Personal notes<textarea name="notes" maxlength="100000" rows="4">{{ lecture.notes }}</textarea></label><button>Save changes</button></form></details>
+<section class="study"><h2>Study tools</h2><form action="{{ url_for('study', lecture_id=lecture.id) }}" method="post"><input type="hidden" name="csrf" value="{{ session.csrf }}">
+<label>{{ 'Ask about your notes' if model else 'Search your notes for a passage' }}<input name="question" maxlength="2000" value="{{ question|default('') }}"></label>
+<button name="action" value="chat">{{ 'Ask question' if model else 'Find passage' }}</button>
+<button name="action" value="quiz">{{ 'Generate quiz' if model else 'Create recall exercise' }}</button></form>
+{% if action == 'quiz' and not model %}<h3>Recall exercise</h3>{% for prompt, answer in result %}<p>{{ prompt }}</p><details><summary>Reveal answer</summary>{{ answer }}</details>{% else %}<p>Add a longer note to generate an exercise.</p>{% endfor %}
+{% elif action == 'quiz' %}<h3>Practice quiz</h3>{% for item in result %}<p>{{ loop.index }}. {{ item.question }}</p><ol type="A">{% for option in item.options %}<li>{{ option }}</li>{% endfor %}</ol><details><summary>Reveal answer</summary>{{ item.correctAnswer }}. {{ item.explanation }}</details>{% endfor %}
+{% elif result %}<h3>{{ 'Quiz' if action == 'quiz' else 'Response' }}</h3><div class="prose">{{ result }}</div>{% endif %}</section>
+<details><summary>Related resource ranking · synthetic catalogue</summary><ul>{% for item in resources %}<li>{{ item.title }} · {{ item.duration }} · score {{ item.score }}</li>{% endfor %}</ul></details>
+<p class="actions"><button type="button" id="export-doc">Download Word-compatible notes</button> Use your browser’s Print command to save these notes as a PDF.</p>
+<details class="actions"><summary>Remove from library</summary><form method="post" action="{{ url_for('remove', lecture_id=lecture.id) }}"><input type="hidden" name="csrf" value="{{ session.csrf }}"><button>Delete this lecture</button></form></details><script src="/static/download-summary.js" defer></script>{% endblock %}

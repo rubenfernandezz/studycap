@@ -1,0 +1,5 @@
+body { width: 17rem; margin: 1rem; color: #163937; font: .95rem/1.45 system-ui, sans-serif; }
+h1 { font-size: 1.35rem; }
+button { display: block; width: 100%; margin-top: .6rem; padding: .65rem; border-radius: .4rem; background: #116459; color: white; border: 0; font: inherit; cursor: pointer; }
+button + button { color: #163937; background: #e9f2ee; }
+[role=status]:empty { display: none; }

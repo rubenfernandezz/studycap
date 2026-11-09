@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block title %}Practice lecture · StudyCap{% endblock %}
+{% block body %}<h1 class="video-title">Feedback control</h1><p>Synthetic lecture for testing the StudyCap extension. Open the extension and select <strong>Capture captions</strong>.</p>
+<h2>Captions</h2><div class="event-tab-scroll-pane">{% for line in captions %}<div class="index-event-row"><p class="event-text"><span>{{ line }}</span></p></div>{% endfor %}</div>
+<a href="/import?sample=1">Review these captions without the extension</a>{% endblock %}

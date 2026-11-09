@@ -1,0 +1,5 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}StudyCap{% endblock %}</title><link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"></head>
+<body><header><nav aria-label="Main navigation"><a class="brand" href="/">StudyCap</a><a href="/">Lecture library</a><a href="/practice">Practice lecture</a></nav></header>
+<main>{% if error %}<p role="alert">{{ error }}</p>{% endif %}{% block body %}{% endblock %}</main></body></html>
